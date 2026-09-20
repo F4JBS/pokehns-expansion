@@ -82,7 +82,7 @@ extern u16 gSpecialVar_ItemId;
 
 #define FRIENDSHIP_EVO_THRESHOLD ((P_FRIENDSHIP_EVO_THRESHOLD >= GEN_8) ? 160 : 220)
 
-static const u32 sShinyOddsTable[] = { 8, 16, 32, 64, 128 };
+static const u32 sShinyOddsTable[] = { 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096 };
 
 u32 GetShinyOdds(void)
 {
