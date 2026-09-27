@@ -1184,7 +1184,10 @@
 #define FLAG_MELEMELE_HIDDEN_ITEM                   (HNS_EXTENDED_CONTENT_START + 299)
 #define HNS_EXTENDED_CONTENT_COUNT                  300
 #define HNS_EXTENDED_CONTENT_END                    (HNS_EXTENDED_CONTENT_START + HNS_EXTENDED_CONTENT_COUNT - 1)
-// 0x496–0x4FF remaining reserved for future expansion
+#define DN_FLAG_SEARCHING                           0x496
+#define DN_FLAG_DEXNAV_GET                          0x497
+#define DN_FLAG_DETECTOR_MODE                       0x498
+// 0x499–0x4FF remaining reserved for future expansion
 
 // Trainer registered (match call) flags — one per rematchable trainer
 #define TRAINER_REGISTERED_FLAGS_START               0x310

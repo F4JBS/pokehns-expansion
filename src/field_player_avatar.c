@@ -929,7 +929,12 @@ static void PlayerNotOnBikeMoving(enum Direction direction, u16 heldKeys)
         return;
     }
 
-    if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER)
+    if (FlagGet(DN_FLAG_SEARCHING) && (heldKeys & A_BUTTON))
+    {
+        gPlayerAvatar.creeping = TRUE;
+        PlayerWalkSlow(direction);
+    }
+    else if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER)
      && (gSaveBlock3Ptr->challengeSettings.autoRun == 0 || (heldKeys & B_BUTTON))
      && FlagGet(FLAG_SYS_B_DASH)
      && IsRunningDisallowed(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) == 0
@@ -953,11 +958,6 @@ static void PlayerNotOnBikeMoving(enum Direction direction, u16 heldKeys)
             gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_DASH;
         }
         return;
-    }
-    else if (FlagGet(DN_FLAG_SEARCHING) && (heldKeys & A_BUTTON))
-    {
-        gPlayerAvatar.creeping = TRUE;
-        PlayerWalkSlow(direction);
     }
     else
     {
@@ -1725,7 +1725,7 @@ void ClearPlayerAvatarInfo(void)
 
 void SetPlayerAvatarStateMask(u8 flags)
 {
-    gPlayerAvatar.flags &= (PLAYER_AVATAR_FLAG_DASH | PLAYER_AVATAR_FLAG_FORCED_MOVE | PLAYER_AVATAR_FLAG_CONTROLLABLE);
+    gPlayerAvatar.flags &= (PLAYER_AVATAR_FLAG_FORCED_MOVE | PLAYER_AVATAR_FLAG_CONTROLLABLE);
     gPlayerAvatar.flags |= flags;
 }
 

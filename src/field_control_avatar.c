@@ -270,10 +270,10 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
         }
         PlaySE(SE_BIKE_BELL);
     }
-#else
+    else
+#endif
     if (input->pressedRButton && TryStartDexNavSearch())
         return TRUE;
-#endif
 
     if (input->input_field_1_2 && DEBUG_OVERWORLD_MENU && !DEBUG_OVERWORLD_IN_MENU)
     {

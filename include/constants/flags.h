@@ -57,9 +57,9 @@
 
 #else
 
-#define DN_FLAG_SEARCHING    0x22
-#define DN_FLAG_DEXNAV_GET   0x23
-#define DN_FLAG_DETECTOR_MODE 0x24
+#define FLAG_UNUSED_0x022    0x22 // Unused Flag
+#define FLAG_UNUSED_0x023    0x23 // Unused Flag
+#define FLAG_UNUSED_0x024    0x24 // Unused Flag
 #define FLAG_UNUSED_0x025    0x25 // Unused Flag
 #define FLAG_UNUSED_0x026    0x26 // Unused Flag
 #define FLAG_UNUSED_0x027    0x27 // Unused Flag
@@ -1229,9 +1229,9 @@
 #define FLAG_UNUSED_0x493                                           0x493 // Unused Flag
 #define FLAG_UNUSED_0x494                                           0x494 // Unused Flag
 #define FLAG_UNUSED_0x495                                           0x495 // Unused Flag
-#define FLAG_UNUSED_0x496                                           0x496 // Unused Flag
-#define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
-#define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
+#define DN_FLAG_SEARCHING                                           0x496
+#define DN_FLAG_DEXNAV_GET                                          0x497
+#define DN_FLAG_DETECTOR_MODE                                       0x498
 #define FLAG_UNUSED_0x499                                           0x499 // Unused Flag
 #define FLAG_UNUSED_0x49A                                           0x49A // Unused Flag
 #define FLAG_UNUSED_0x49B                                           0x49B // Unused Flag

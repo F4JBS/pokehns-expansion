@@ -6302,7 +6302,7 @@ bool8 FollowablePlayerMovement_Step(struct ObjectEvent *objectEvent, struct Spri
         else
             ObjectEventSetSingleMovement(objectEvent, sprite, GetWalkSlowStairsMovementAction(direction));
     }
-    else if (PlayerGetCopyableMovement() == COPY_MOVE_JUMP2)
+    else if (PlayerGetCopyableMovement() == COPY_MOVE_JUMP2 || gPlayerAvatar.creeping)
     {
         ObjectEventSetSingleMovement(objectEvent, sprite, GetWalkSlowMovementAction(direction));
     }

@@ -825,7 +825,6 @@ static void SetUpDexNavSearch(void)
     }
 
     gPlayerAvatar.creeping = TRUE;  //initialize as true in case mon appears beside you
-    sDexNavSearchDataPtr->proximity = gSprites[gPlayerAvatar.spriteId].x;
     sDexNavSearchDataPtr->startingTime = gMain.vblankCounter1;
     IncrementGameStat(GAME_STAT_DEXNAV_SCANNED);
 }
@@ -1127,6 +1126,9 @@ bool32 OnStep_DexNavSearch(void)
             return TRUE;
         }
 
+        sDexNavSearchDataPtr->startingTime = gMain.vblankCounter1;
+        DexNavProximityUpdate();
+        DexNavUpdateSearchWindow(sDexNavSearchDataPtr->proximity, sDexNavSearchDataPtr->searchLevel);
         sDexNavSearchDataPtr->movementCount++;
     }
     return FALSE;
